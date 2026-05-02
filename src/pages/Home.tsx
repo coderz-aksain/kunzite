@@ -1,0 +1,381 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Star, ChevronDown, Sparkles, ShieldCheck, Leaf, Droplets } from 'lucide-react';
+import KunziteImageCarousel from '../components/KunziteImageCarousel';
+import KunziteImage from '../Kunzite-real.png'
+// Images for hero carousel
+const heroImages = [
+  KunziteImage,
+  'https://images.pexels.com/photos/6621143/pexels-photo-6621143.jpeg?auto=compress&cs=tinysrgb&w=1600',
+];
+const categories = [
+  {
+    title: 'Face Serums',
+    desc: 'Targeted formulas for glow, texture refinement, and hydration.',
+    img: 'https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Cleansers',
+    desc: 'Gentle daily cleansing that protects your skin barrier.',
+    img: 'https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Moisturizers',
+    desc: 'Lightweight to rich textures for every skin type.',
+    img: 'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Body Care',
+    desc: 'Nourishing body essentials with a radiant finish.',
+    img: 'https://images.pexels.com/photos/7659922/pexels-photo-7659922.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Ananya Sharma',
+    role: 'Skin Wellness Coach',
+    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',
+    text: 'Kunzite products are beautifully balanced. My clients love the hydration boost and visible glow after just two weeks.',
+    rating: 5,
+  },
+  {
+    name: 'Rhea Kapoor',
+    role: 'Beauty Creator',
+    avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
+    text: 'The texture, scent, and results feel premium. Kunzite has become a non-negotiable in my morning routine.',
+    rating: 5,
+  },
+  {
+    name: 'Mehak Sethi',
+    role: 'Verified Customer',
+    avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100',
+    text: 'I struggled with dull skin for months. The radiance serum and barrier cream completely changed my skin confidence.',
+    rating: 5,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Are Kunzite products suitable for sensitive skin?',
+    a: 'Yes. Our formulas are dermatologically tested, fragrance-conscious, and developed to support skin barrier health.',
+  },
+  {
+    q: 'How quickly can I see results?',
+    a: 'Most users report visible hydration and glow within 7-14 days, with texture improvements in 4-6 weeks of consistent use.',
+  },
+  {
+    q: 'Are your products cruelty-free?',
+    a: 'Absolutely. Kunzite is 100% cruelty-free and we do not test on animals at any stage of development.',
+  },
+  {
+    q: 'Can I use Kunzite products together in one routine?',
+    a: 'Yes. Our range is designed to layer seamlessly. Start with cleanser, then serum, then moisturizer, and SPF in daytime.',
+  },
+];
+
+export default function Home() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  // Auto-advance carousel every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="">
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        {/* Carousel Images and Overlay */}
+        <div className="absolute inset-0">
+          {heroImages.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt="Kunzite beauty products"
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${heroIndex === i ? 'opacity-60 z-10' : 'opacity-0 z-0'}`}
+              style={{ imageRendering: 'auto' }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
+          {/* Carousel dots */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setHeroIndex(i)}
+                className={`w-3 h-3 rounded-full border border-white/60 ${heroIndex === i ? 'bg-[#f59e0b]' : 'bg-white/30'} transition-colors`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Hero Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+          <div className="max-w-xl px-4 sm:px-6 lg:px-8 w-full pointer-events-auto">
+            <p className="text-gray-300 text-sm font-medium mb-3 tracking-wider uppercase">Kunzite Beauty</p>
+            <h1 className="text-4xl sm:text-7xl lg:text-7xl font-black text-white leading-[0.95] mb-8 tracking-tight">
+              Raw. Real.<br />Radiant.
+            </h1>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/products"
+                className="bg-[#f59e0b] text-black px-7 py-3.5 rounded-full font-semibold hover:bg-[#fb923c] transition-all duration-300 text-sm"
+              >
+                Shop Kunzite
+              </Link>
+              <Link
+                to="/about"
+                className="border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all duration-300 text-sm backdrop-blur-sm"
+              >
+                Our Story
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Grid below Hero Section */}
+      <div className="relative bg-[#111111] border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+            {[
+              { icon: Sparkles, label: 'Glow-Boost Formulas' },
+              { icon: ShieldCheck, label: 'Dermat Tested' },
+              { icon: Leaf, label: 'Cruelty Free' },
+              { icon: Droplets, label: 'Hydration First' },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center justify-center py-6 px-4 gap-2">
+                <item.icon className="w-6 h-6 text-[#f59e0b]" strokeWidth={1.5} />
+                <span className="text-sm text-gray-300">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Categories</p>
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight max-w-md">
+              Premium skincare crafted for everyday radiance.
+            </h2>
+          </div>
+          <div className="md:max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Discover high-performance beauty essentials designed to hydrate, protect, and restore your natural glow.
+            </p>
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 text-[#f59e0b] text-sm font-semibold hover:gap-3 transition-all duration-300"
+            >
+              Explore products <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {categories.map((cat, i) => (
+            <Link to="/products" key={i} className="group relative overflow-hidden rounded-2xl aspect-[3/4] block card-hover">
+              <img src={cat.img} alt={cat.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="text-white font-bold text-lg mb-1">{cat.title}</h3>
+                <p className="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {cat.desc}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section> */}
+
+      <section className="py-24 bg-[#0d0d0d]">
+              {/* Kunzite Face Cleanser Featured Product Section - Images Carousel + Grid Details */}
+              <section className="py-24 bg-[#0d0d0d]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+                  <h2 className="text-4xl md:text-5xl font-black text-white mb-4 text-center">Kunzite Face Cleanser</h2>
+                  <p className="text-[#f59e0b] text-2xl font-semibold uppercase tracking-widest mb-8 text-center">Featured Product</p>
+                  <KunziteImageCarousel />
+                  <div className="w-full grid md:grid-cols-2 gap-8 mt-10">
+                    <div className="space-y-4">
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Weight</span>
+                        <span className="text-lg text-gray-300">100 gm</span>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Skin type</span>
+                        <span className="text-lg text-gray-300">All skin types</span>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">pH</span>
+                        <span className="text-lg text-gray-300">Skin-friendly</span>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Free from</span>
+                        <span className="text-lg text-gray-300">Parabens, sulfates, oils, alcohol</span>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Manufacturer</span>
+                        <span className="text-lg text-gray-300">Om Sai Pharma Pack (WHO-GMP certified)</span>
+                      </div>
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Origin</span>
+                        <span className="text-lg text-gray-300">Haridwar, India</span>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="bg-white/5 rounded-xl p-5">
+                        <span className="block font-bold text-white text-xl mb-1">Key Ingredients Explained</span>
+                        <span className="text-lg text-[#f59e0b] font-semibold block mt-2">Cleansing Base (Gentle surfactants):</span>
+                        <span className="text-gray-300 block">Decyl Glucoside, Sodium Lauroyl Sarcosinate, Cocamidopropyl Betaine</span>
+                        <span className="text-gray-400 block text-base">Mild, plant-derived cleansers – good for daily use</span>
+                        <span className="text-lg text-[#f59e0b] font-semibold block mt-4">Active Skincare Ingredients:</span>
+                        <span className="text-gray-300 block">Niacinamide (Vitamin B3): Brightens skin, reduces acne marks, controls oil<br/>Salicylic Acid (BHA): Deep cleans pores, helps with acne & blackheads<br/>Ethyl Ascorbic Acid (Vitamin C): Improves glow, fights dullness<br/>Vitamin E: Antioxidant, protects and nourishes skin<br/>Hyaluronic Acid: Hydrates and keeps skin soft</span>
+                        <span className="text-gray-400 block text-base">Multi-benefit: acne + glow + hydration</span>
+                        <span className="text-lg text-[#f59e0b] font-semibold block mt-4">Texture & Stability:</span>
+                        <span className="text-gray-300 block">Xanthan Gum (thickener), Tween 20 & Macrogolglycerol Hydroxystearate (mixes ingredients), Sodium Hydroxide (adjusts pH)</span>
+                        <span className="text-lg text-[#f59e0b] font-semibold block mt-4">Aesthetic Add-ons:</span>
+                        <span className="text-gray-300 block">Milii Capsules (colored beads) – dissolve while washing (visual appeal), CI 42090 (blue colorant), Perfume (fragrance)</span>
+                        <span className="text-lg text-[#f59e0b] font-semibold block mt-4">Preservative:</span>
+                        <span className="text-gray-300 block">Phenoxyethanol – keeps product safe from bacteria</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div className="bg-[#f59e0b]/10 rounded-xl p-4 text-center">
+                          <span className="block text-xl font-bold text-[#f59e0b] mb-1">Gentle daily cleansing</span>
+                          <span className="text-white text-lg">No dryness</span>
+                        </div>
+                        <div className="bg-[#f59e0b]/10 rounded-xl p-4 text-center">
+                          <span className="block text-xl font-bold text-[#f59e0b] mb-1">Acne & pores</span>
+                          <span className="text-white text-lg">Salicylic acid</span>
+                        </div>
+                        <div className="bg-[#f59e0b]/10 rounded-xl p-4 text-center">
+                          <span className="block text-xl font-bold text-[#f59e0b] mb-1">Brightens skin</span>
+                          <span className="text-white text-lg">Niacinamide + Vit C</span>
+                        </div>
+                        <div className="bg-[#f59e0b]/10 rounded-xl p-4 text-center">
+                          <span className="block text-xl font-bold text-[#f59e0b] mb-1">Hydrates</span>
+                          <span className="text-white text-lg">Hyaluronic acid</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://wa.me/918126142095?text=I%20want%20to%20order%20Kunzite%20Face%20Cleanser%20(100gm)%20for%20all%20skin%20types.%20pH:%20Skin-friendly.%20Free%20from:%20Parabens,%20sulfates,%20oils,%20alcohol.%20Manufacturer:%20Om%20Sai%20Pharma%20Pack%20(WHO-GMP%20certified).%20Origin:%20Haridwar,%20India.%20Key%20Ingredients:%20Gentle%20surfactants%20(Decyl%20Glucoside,%20Sodium%20Lauroyl%20Sarcosinate,%20Cocamidopropyl%20Betaine),%20Niacinamide,%20Salicylic%20Acid,%20Ethyl%20Ascorbic%20Acid,%20Vitamin%20E,%20Hyaluronic%20Acid.%20Preservative:%20Phenoxyethanol.%20Benefits:%20Gentle%20cleansing,%20acne%20care,%20glow,%20hydration.%20Please%20share%20purchase%20details."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#d39c25] text-white px-10 py-4 rounded-full font-bold text-2xl shadow-lg hover:bg-[#e8bb08] transition-colors duration-300 mt-8"
+                  >
+                    Order now 
+                  </a>
+                </div>
+              </section>
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Featured</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Kunzite Radiance Ritual</h2>
+          <p className="text-gray-400 mb-12 max-w-md">A complete routine to cleanse, repair, and glow from day to night.</p>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative overflow-hidden rounded-3xl aspect-video lg:aspect-auto lg:h-[480px]">
+              <img
+                src="https://images.pexels.com/photos/6621468/pexels-photo-6621468.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Kunzite skincare set"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute top-4 left-4 bg-[#f59e0b] text-black text-xs font-bold px-3 py-1.5 rounded-full">
+                Bestseller set
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-2">Daily Glow Essentials</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                Includes Gentle Cleansing Gel, Vitamin C Radiance Serum, Barrier Repair Moisturizer, and Overnight Renewal Cream. Powered by niacinamide, hyaluronic acid, vitamin C, and ceramides.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {['Hydrates instantly', 'Improves texture', 'Boosts brightness', 'Supports skin barrier'].map((item) => (
+                  <div key={item} className="bg-white/5 rounded-xl p-3 text-center text-xs text-gray-300">
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-white/10">
+                <div>
+                  <p className="text-3xl font-black text-white">INR 2,499</p>
+                  <p className="text-gray-400 text-sm">Complete ritual kit</p>
+                </div>
+                <Link to="/products" className="bg-[#f59e0b] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#fb923c] transition-colors duration-300 text-sm">
+                  Buy now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </section>
+
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Testimonials</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white">Loved by real skin, every day</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-[#111111] border border-white/5 rounded-2xl p-7 card-hover">
+              <div className="flex gap-1 mb-4">
+                {[...Array(t.rating)].map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]" />
+                ))}
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">"{t.text}"</p>
+              <div className="flex items-center gap-3">
+                <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
+                <div>
+                  <p className="text-white font-semibold text-sm">{t.name}</p>
+                  <p className="text-gray-400 text-xs">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">FAQs</p>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Everything about Kunzite beauty</h2>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Need help choosing the right products? Here are quick answers to our most common skincare and order questions.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className={`border rounded-2xl overflow-hidden transition-colors duration-200 ${
+                    activeFaq === i ? 'border-[#f59e0b]/50 bg-[#f59e0b]/5' : 'border-white/10 bg-[#111111]'
+                  }`}
+                >
+                  <button className="w-full flex items-center justify-between p-5 text-left" onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
+                    <span className="font-semibold text-white text-sm pr-4">{faq.q}</span>
+                    <ChevronDown className={`w-5 h-5 text-[#f59e0b] shrink-0 transition-transform duration-300 ${activeFaq === i ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ${activeFaq === i ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <p className="px-5 pb-5 text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
