@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Phone } from 'lucide-react';
-import companyLogo from '../Kunzyte.png';
-
+import logo from "../Kunzyte.png";
 const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
@@ -40,7 +39,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
               <img
-                src={companyLogo}
+                src={logo}
                 alt="Kunzite logo"
                 className="h-[99px] md:h-[136px] w-auto object-contain origin-left scale-110 md:scale-125 transition-transform duration-300 group-hover:scale-[1.32]"
               />
