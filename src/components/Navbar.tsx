@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Phone } from 'lucide-react';
-import companyLogo from '../kunzyte.png';
+import companyLogo from '../Kunzyte.png';
 
 const navLinks = [
   { label: 'Home', path: '/' },
