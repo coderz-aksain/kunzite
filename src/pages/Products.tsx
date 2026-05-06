@@ -74,7 +74,7 @@ const tagColors: Record<string, string> = {
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [showFilter, setShowFilter] = useState(false);
-  const whatsappNumber = '918126142095';
+  const whatsappNumber = '7895463211';
 
   const filtered = activeCategory === 'All'
     ? allProducts
@@ -90,7 +90,7 @@ export default function Products() {
       `Benefit: ${product.location}`,
       `Tag: ${product.tag}`,
       '',
-      'Please share complete details and how to order.',
+      'Please share complete details. And how to order this product? Thank you!',
     ].join('\n');
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
