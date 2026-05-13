@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">Quick Links</h4>
+            <p className="text-white font-semibold mb-5 text-lg uppercase tracking-widest">Quick Links</p>
             <ul className="space-y-3">
               {[
                 { label: 'Home', path: '/' },
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#f59e0b] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                    className="text-gray-400 hover:text-[#f59e0b] text-md transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#f59e0b] transition-colors" />
                     {link.label}
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">Legal</h4>
+            <p className="text-white font-semibold mb-5 text-lg uppercase tracking-widest">Legal</p>
             <ul className="space-y-3">
               {[
                 { label: 'Terms & Conditions', path: '/terms' },
@@ -80,7 +80,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#f59e0b] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                    className="text-gray-400 hover:text-[#f59e0b] text-md transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#f59e0b] transition-colors" />
                     {link.label}
@@ -92,15 +92,15 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">Contact</h4>
+            <p className="text-white font-semibold mb-5 text-lg uppercase tracking-widest">Contact</p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#f59e0b] mt-0.5 shrink-0" />
-                <span className="text-gray-400 text-sm">Brij vihar kankhal Haridwar Uttrakhand 249408</span>
+                <span className="text-gray-400 text-md">Brij vihar kankhal Haridwar Uttrakhand 249408</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#f59e0b] shrink-0" />
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-white text-sm transition-colors">
+                <a href="tel:+919876543210" className="text-gray-400 hover:text-white text-md transition-colors">
                   +91 78954 63211
                 </a>
               </li>

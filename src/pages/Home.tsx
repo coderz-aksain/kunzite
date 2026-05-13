@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ChevronDown, Sparkles, ShieldCheck, Leaf, Droplets } from 'lucide-react';
 import KunziteImageCarousel from '../components/KunziteImageCarousel';
 import KunziteImage from '../Kunzite-real.png'
+import Image1 from "../Testimonial Image 1.jpeg"
+import Image2 from "../Testimonial Image 2.jpeg"
+import Image3 from "../Testimonial Image 3.jpeg"
 // Images for hero carousel
 const heroImages = [
   KunziteImage,
@@ -33,24 +36,24 @@ const categories = [
 
 const testimonials = [
   {
-    name: 'Ananya Sharma',
+    name: 'Neeta Pandey',
     role: 'Skin Wellness Coach',
-    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',
-    text: 'Kunzite products are beautifully balanced. My clients love the hydration boost and visible glow after just two weeks.',
+    avatar: Image1,
+    text: 'I was very confused about which facewash suited my skin. I used a couple of brands, but there was no improvement in my face. But then I found Kunzite Face Cleanser facewash. After using it for some days, I found so much improvement. I like the product and its quality.',
     rating: 5,
   },
   {
-    name: 'Rhea Kapoor',
+    name: 'Madhuri Sharma',
     role: 'Beauty Creator',
-    avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
-    text: 'The texture, scent, and results feel premium. Kunzite has become a non-negotiable in my morning routine.',
+    avatar: Image2,
+    text: 'One day I was searching the best Face cleanser which is good For Dry skin , Then My colleague suggest me Kunzite Face cleanser, I ordered and get the product as promised date. it has been 2 months I am using it and I am totally satisfied and I definitely recommend this product.',
     rating: 5,
   },
   {
     name: 'Mehak Sethi',
     role: 'Verified Customer',
-    avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100',
-    text: 'I struggled with dull skin for months. The radiance serum and barrier cream completely changed my skin confidence.',
+    avatar: Image3,
+    text: 'I’m in my 50s, and at this age, using any product doesn’t benefit much due to ageing. But using Kunzite Face Cleanser totally changed my life. Within a week, I saw results in improving my dull skin and brightening my skin. I love this product. You must buy this.',
     rating: 5,
   },
 ];
@@ -337,7 +340,7 @@ export default function Home() {
                 <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
                 <div>
                   <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-gray-400 text-xs">{t.role}</p>
+                  {/* <p className="text-gray-400 text-xs">{t.role}</p> */}
                 </div>
               </div>
             </div>
