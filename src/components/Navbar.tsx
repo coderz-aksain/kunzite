@@ -30,8 +30,8 @@ export default function Navbar() {
         <nav
           className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
             scrolled
-              ? 'bg-[#fff7ed]/95 backdrop-blur-md shadow-xl shadow-orange-200/50 border border-orange-200/90'
-              : 'bg-[#fff7ed] shadow-lg shadow-orange-100/70 border border-orange-200'
+              ? 'bg-white backdrop-blur-md shadow-xl shadow-orange-200/50 border border-orange-200/90'
+              : 'bg-white shadow-lg shadow-orange-100/70 border border-orange-200'
           }`}
         >
           <div className="px-4 sm:px-6 lg:px-8">
@@ -133,12 +133,14 @@ export default function Navbar() {
       </div>
 
       {/* Full-screen menu (desktop) */}
-      <div
-        className={`fixed inset-0 z-40 hidden md:block transition-opacity duration-150 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setIsOpen(false)}
-      >
+  <div
+  className={`fixed inset-0 z-40 hidden md:block transition-opacity duration-150 ${
+    isOpen
+      ? 'bg-gradient-to-br from-black/50 via-white/60 to-white/60 opacity-100 pointer-events-auto'
+      : 'opacity-0 pointer-events-none'
+  }`}
+  onClick={() => setIsOpen(false)}
+>
         <div className="absolute inset-0 bg-[#fff7ed]/78 backdrop-blur-md backdrop-saturate-150" />
         <div className="relative flex items-center justify-center h-full">
           <div className={`text-center space-y-6 transition-all duration-200 ease-out ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
@@ -146,7 +148,7 @@ export default function Navbar() {
               <div key={link.path}>
                 <Link
                   to={link.path}
-                  className="block text-4xl font-semibold text-white hover:text-[#d97706] transition-all duration-300 hover:translate-x-2 transform"
+                  className="block text-4xl font-semibold text-black hover:text-[#d97706] transition-all duration-300 hover:translate-x-2 transform"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

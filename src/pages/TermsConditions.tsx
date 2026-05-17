@@ -75,26 +75,26 @@ export default function TermsConditions() {
       </section>
 
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-14">
             {sections.map((section, i) => (
               <div key={i} className="border-b border-white/5 pb-12 last:border-0">
-                <h2 className="text-2xl font-bold text-white mb-5">{section.title}</h2>
-                <p className="text-gray-300 leading-relaxed text-lg">{section.content}</p>
+                <h2 className="text-2xl font-bold text-black mb-5">{section.title}</h2>
+                <p className="text-black leading-relaxed text-xl">{section.content}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-16 p-8 bg-[#f59e0b]/5 border border-[#f59e0b]/20 rounded-2xl">
-            <h3 className="text-white font-bold text-2xl mb-3">Questions about our terms?</h3>
-            <p className="text-gray-400 text-lg mb-6">
+            <h3 className="text-black font-bold text-2xl mb-3">Questions about our terms?</h3>
+            <p className="text-black text-lg mb-6">
               For legal or compliance queries, please contact us.
             </p>
             <a
               href="mailto:legal@kunzitebeauty.com"
               className="inline-flex items-center gap-2 text-[#f59e0b] text-lg font-semibold hover:underline"
             >
-              legal@kunzitebeauty.com
+              skinscare26@gmail.com
             </a>
           </div>
         </div>

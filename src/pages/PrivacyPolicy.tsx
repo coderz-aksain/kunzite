@@ -65,10 +65,10 @@ export default function PrivacyPolicy() {
             <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest">Kunzite Legal</p>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Privacy Policy</h1>
-          <p className="text-gray-400">
-            Last updated: <span className="text-gray-300">April 25, 2026</span>
+          <p className="text-white">
+            Last updated: <span className="text-white">April 25, 2026</span>
           </p>
-          <p className="text-gray-400 mt-4 leading-relaxed">
+          <p className="text-white mt-4 leading-relaxed">
             This policy describes how Kunzite collects, uses, and protects your personal information.
           </p>
         </div>
@@ -79,20 +79,20 @@ export default function PrivacyPolicy() {
           <div className="space-y-10">
             {sections.map((section, i) => (
               <div key={i} className="border-b border-white/5 pb-10 last:border-0">
-                <h2 className="text-xl font-bold text-white mb-4">{section.title}</h2>
-                <p className="text-gray-400 leading-relaxed text-sm">{section.content}</p>
+                <h2 className="text-2xl font-bold text-black mb-4">{section.title}</h2>
+                <p className="text-black leading-relaxed text-xl">{section.content}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 p-6 bg-[#f59e0b]/5 border border-[#f59e0b]/20 rounded-2xl">
-            <h3 className="text-white font-bold mb-2 text-lg">Privacy concerns or requests?</h3>
-            <p className="text-gray-400 text-sm mb-4">
+            <h3 className="text-black font-bold mb-2 text-lg">Privacy concerns or requests?</h3>
+            <p className="text-black text-lg mb-4">
               For privacy-related questions, contact our support team.
             </p>
             <a
               href="mailto:skinscare26@gmail.com"
-              className="inline-flex items-center gap-2 text-[#f59e0b] text-sm font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-[#f59e0b] text-lg font-semibold hover:underline"
             >
               skinscare26@gmail.com
             </a>

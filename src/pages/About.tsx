@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Award, Users, TrendingUp, Heart, Shield } from 'lucide-react';
 import AboutImage from '../about kunzite.jpg'
+import Image1 from '../imgmain6.jpeg'
 import AboutOurStoryImage from "../about our story image.jpeg"
+import CEOImage from '../CEO Kunzite.jpeg'
 const team = [
   {
     name: 'Aarushi Mehta',
@@ -26,9 +28,9 @@ const team = [
 ];
 
 const ceoMessage = {
-  name: 'Aarushi Mehta',
+  name: 'Manish Kumar Dubey',
   role: 'CEO & Founder, Kunzite',
-  img: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=900',
+  img: CEOImage,
   message:
     'Kunzite was created for people who want effective skincare without confusion. Our promise is simple: honest formulas, visible results, and products that make you feel confident in your natural skin every single day.',
 };
@@ -87,14 +89,14 @@ export default function About() {
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-4">Our Story</p>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <p className="text-[#f59e0b] text-xl font-semibold uppercase tracking-widest mb-4">Our Story</p>
+            <h2 className="text-4xl md:text-5xl font-black text-black mb-6">
               Built on science, powered by care
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-5">
+            <p className="text-black  leading-relaxed mb-5">
               Kunzite started with one simple idea: skincare should be both luxurious and honest. We spent years refining formulas that deliver visible results without overwhelming skin.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-black  leading-relaxed mb-8">
               From ingredient sourcing to packaging experience, every detail is designed for comfort, consistency, and glow you can trust.
             </p>
             <div className="space-y-3">
@@ -106,7 +108,7 @@ export default function About() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-[#f59e0b] shrink-0" />
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <span className="text-black text-lg">{item}</span>
                 </div>
               ))}
             </div>
@@ -114,12 +116,12 @@ export default function About() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
               <img
-                src={AboutOurStoryImage}
+                src={Image1}
                 alt="About"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-[#f59e0b] text-black rounded-2xl p-6 shadow-2xl">
+            <div className="absolute -bottom-6 -left-6 bg-[#d2eaf0] text-black rounded-2xl p-6 shadow-2xl">
               <p className="text-4xl font-black">5+</p>
               <p className="text-sm font-semibold">Years of Formulation</p>
             </div>
@@ -128,7 +130,7 @@ export default function About() {
       </section>
 
       {/* CEO message */}
-      <section className="py-24 bg-[#101010]">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="relative">
@@ -143,12 +145,12 @@ export default function About() {
             </div>
             <div>
               <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Founder's Note</p>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-5">A Message from  CEO</h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <h2 className="text-4xl md:text-5xl font-black text-black mb-5">A Message from  CEO</h2>
+              <p className="text-black text-lg leading-relaxed mb-6">
                 "{ceoMessage.message}"
               </p>
-              <p className="text-white font-semibold">{ceoMessage.name}</p>
-              <p className="text-gray-400 text-sm">{ceoMessage.role}</p>
+              <p className="text-black font-semibold">{ceoMessage.name}</p>
+              <p className="text-black  text-sm">{ceoMessage.role}</p>
             </div>
           </div>
         </div>
@@ -163,12 +165,12 @@ export default function About() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
-              <div key={i} className="bg-[#111111] border border-white/5 rounded-2xl p-7 card-hover text-center">
+              <div key={i} className="bg-black/10 border border-white/5 rounded-2xl p-7 card-hover text-center">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#f59e0b]/10 mb-5">
                   <v.icon className="w-7 h-7 text-[#f59e0b]" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-3">{v.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
+                <p className="text-white  text-lg leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -180,7 +182,7 @@ export default function About() {
         <div className="text-center mb-14">
           <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Our Team</p>
           <h2 className="text-4xl md:text-5xl font-black text-white">Meet the beauty experts</h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm">
+          <p className="text-black  mt-4 max-w-xl mx-auto text-sm">
             Our team of dedicated professionals brings passion, expertise, and personalized attention to every client relationship.
           </p>
         </div>
@@ -223,22 +225,22 @@ export default function About() {
 
       {/* CTA */}
       <section className="py-24 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-black text-black mb-6">
           Ready to build your glow routine?
         </h2>
-        <p className="text-gray-400 mb-8 text-lg">
+        <p className="text-black  mb-8 text-lg">
           Start with Kunzite essentials tailored for your skin goals.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-[#f59e0b] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300"
+            className="inline-flex items-center gap-2 bg-[#f59e0b] text-black px-8 py-4 rounded-full font-bold hover:bg-white  transition-colors duration-300"
           >
             Contact Kunzite <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:border-[#f59e0b] hover:text-[#f59e0b] transition-colors duration-300"
+            className="inline-flex items-center gap-2  border-2 text-black px-8 py-4 rounded-full font-bold  hover:border-[#f59e0b] hover:text-[#f59e0b] transition-colors duration-300"
           >
             View Products
           </Link>
