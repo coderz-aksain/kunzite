@@ -107,8 +107,8 @@ export default function Navbar() {
                 to={link.path}
                 className={`block rounded-2xl px-4 py-3 text-3xl font-semibold transition-all duration-300 ${
                   location.pathname === link.path
-                    ? 'bg-[#f59e0b]/15 text-[#d97706]'
-                    : 'text-white hover:bg-orange-100/80 hover:text-[#d97706]'
+                    ? 'bg-[#f59e0b]/50 text-black'
+                    : 'text-black hover:bg-orange-100/80 hover:text-black'
                 }`}
               >
                 {link.label}
@@ -117,13 +117,13 @@ export default function Navbar() {
             <div className="pt-4 mt-2 border-t border-orange-200/70">
               <Link
                 to="/terms"
-                className="block px-4 py-3 rounded-xl text-base text-white hover:text-black transition-colors duration-200"
+                className="block px-4 py-3 rounded-xl text-base text-black hover:text-black transition-colors duration-200"
               >
                 Terms & Conditions
               </Link>
               <Link
                 to="/privacy"
-                className="block px-4 py-3 rounded-xl text-base text-white hover:text-black transition-colors duration-200"
+                className="block px-4 py-3 rounded-xl text-base text-black hover:text-black transition-colors duration-200"
               >
                 Privacy Policy
               </Link>
