@@ -7,10 +7,10 @@ import KunziteImage2 from '../imagemain13.jpeg'
 import Image1 from "../Testimonial Image 1.jpeg"
 import Image2 from "../Testimonial Image 2.jpeg"
 import Image3 from "../Testimonial Image 3.jpeg"
-import HeroImage from "../heroimg1.jpeg"
-import HeroImage2 from "../heroimg2.jpeg"
-import HeroImage3 from "../heroimg3.jpeg"
-import HeroImage4 from "../heroimg4.jpeg"
+import HeroImage from "../h1.jpeg"
+import HeroImage2 from "../h2.jpeg"
+import HeroImage3 from "../h3.jpeg"
+import HeroImage4 from "../h4.jpeg"
 import HeroImage5 from "../heroimg5.jpeg"
 import HeroImage6 from "../heroimg6.jpeg"
 
@@ -107,9 +107,9 @@ export default function Home() {
 
   return (
     <div className="">
-      <section className="relative min-h-screen flex flex-col overflow-hidden">
+<section className="relative min-h-screen flex flex-col overflow-hidden">
 
-  {/* Carousel Images + White Glass Overlay */}
+  {/* Background Carousel */}
   <div className="absolute inset-0">
 
     {heroImages.map((img, i) => (
@@ -117,65 +117,72 @@ export default function Home() {
         key={i}
         src={img}
         alt="Kunzite beauty products"
-        className={`absolute inset-0 
-          w-full 
-          h-full 
-          object-cover 
-          object-center 
-          transition-opacity 
+        className={`
+          absolute inset-0
+          w-full
+          h-full
+          object-cover
+          object-center
+          transition-all
           duration-1000
+          ease-in-out
           ${
             heroIndex === i
-              ? "opacity-100 z-10"
-              : "opacity-0 z-0"
-          }`}
+              ? "opacity-100 scale-100 z-10"
+              : "opacity-0 scale-105 z-0"
+          }
+        `}
         style={{
           imageRendering: "auto",
         }}
       />
     ))}
 
-    {/* Premium White Opaque Glass Overlay */}
+    {/* Subtle White Glass Overlay */}
     <div
       className="
-      absolute 
-      inset-0
-      bg-gradient-to-r
-      from-white/90
-      via-white/60
-      to-white/25
-      backdrop-blur-[4px]
-      z-20
-    "
+        absolute
+        inset-0
+        bg-gradient-to-r
+        from-white/45
+        via-white/25
+        to-transparent
+        backdrop-blur-[1px]
+        z-20
+      "
     />
 
-    {/* Soft additional layer for luxury effect */}
+    {/* Luxury contrast layer */}
     <div
       className="
-      absolute
-      inset-0
-      bg-white/10
-      z-20
-    "
+        absolute
+        inset-0
+        bg-black/5
+        z-20
+      "
     />
 
-    {/* Carousel dots */}
+    {/* Carousel Dots */}
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+
       {heroImages.map((_, i) => (
         <button
           key={i}
           onClick={() => setHeroIndex(i)}
-          className={`transition-all duration-300
+          className={`
+            transition-all duration-300
             ${
               heroIndex === i
                 ? "w-8 h-3 rounded-full bg-[#f59e0b]"
-                : "w-3 h-3 rounded-full bg-black/20"
+                : "w-3 h-3 rounded-full bg-white/50"
             }
           `}
           aria-label={`Go to slide ${i + 1}`}
         />
       ))}
+
     </div>
+
   </div>
 
   {/* Hero Content */}
@@ -185,30 +192,51 @@ export default function Home() {
 
       <div className="max-w-2xl">
 
-        <p className="text-black text-sm font-semibold tracking-[4px] uppercase mb-4">
+        <p className="
+          text-black
+          text-sm
+          font-semibold
+          tracking-[4px]
+          uppercase
+          mb-4
+        ">
           Kunzite Beauty
         </p>
 
         <h1
           className="
-          text-5xl
-          sm:text-7xl
-          lg:text-8xl
-          font-black
-          text-black
-          leading-[0.9]
-          mb-8
-          tracking-tight
-        "
+            text-5xl
+            sm:text-7xl
+            lg:text-8xl
+            font-black
+            text-black
+            leading-[0.9]
+            tracking-tight
+            mb-8
+          "
         >
           Raw.
-          <h1 className='text-yellow-500'>Real.</h1>
-           
-          
+          <br />
+
+          <span className="text-yellow-500">
+            Real.
+          </span>
+
+          <br />
+
           Radiant.
         </h1>
 
-        <p className="text-black/70 text-lg sm:text-xl mb-10 max-w-lg leading-relaxed">
+        <p
+          className="
+            text-black/70
+            text-lg
+            sm:text-xl
+            mb-10
+            max-w-lg
+            leading-relaxed
+          "
+        >
           Discover skincare crafted with science and care —
           designed for healthy, radiant skin every day.
         </p>
@@ -218,18 +246,18 @@ export default function Home() {
           <Link
             to="/products"
             className="
-            bg-[#f59e0b]
-            text-black
-            px-8
-            py-4
-            rounded-full
-            font-semibold
-            hover:bg-[#fb923c]
-            hover:scale-105
-            transition-all
-            duration-300
-            shadow-lg
-          "
+              bg-[#f59e0b]
+              text-black
+              px-8
+              py-4
+              rounded-full
+              font-semibold
+              hover:bg-[#fb923c]
+              hover:scale-105
+              transition-all
+              duration-300
+              shadow-xl
+            "
           >
             Shop Kunzite
           </Link>
@@ -237,19 +265,21 @@ export default function Home() {
           <Link
             to="/about"
             className="
-            bg-white/40
-            backdrop-blur-md
-            border
-            border-black/10
-            text-black
-            px-8
-            py-4
-            rounded-full
-            font-semibold
-            hover:bg-white/60
-            transition-all
-            duration-300
-          "
+              bg-white/60
+              backdrop-blur-md
+              border
+              border-black/10
+              text-black
+              px-8
+              py-4
+              rounded-full
+              font-semibold
+              hover:bg-white/80
+              hover:scale-105
+              transition-all
+              duration-300
+              shadow-lg
+            "
           >
             Our Story
           </Link>
