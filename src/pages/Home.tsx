@@ -420,14 +420,23 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <a
-                    href="https://wa.me/918126142095?text=I%20want%20to%20order%20Kunzite%20Face%20Cleanser%20(100gm)%20for%20all%20skin%20types.%20pH:%20Skin-friendly.%20Free%20from:%20Parabens,%20sulfates,%20oils,%20alcohol.%20Manufacturer:%20Om%20Sai%20Pharma%20Pack%20(WHO-GMP%20certified).%20Origin:%20Haridwar,%20India.%20Key%20Ingredients:%20Gentle%20surfactants%20(Decyl%20Glucoside,%20Sodium%20Lauroyl%20Sarcosinate,%20Cocamidopropyl%20Betaine),%20Niacinamide,%20Salicylic%20Acid,%20Ethyl%20Ascorbic%20Acid,%20Vitamin%20E,%20Hyaluronic%20Acid.%20Preservative:%20Phenoxyethanol.%20Benefits:%20Gentle%20cleansing,%20acne%20care,%20glow,%20hydration.%20Please%20share%20purchase%20details."
+                  {/* <a 
+                                      href="https://wa.me/917895463211
+?text=I%20want%20to%20order%20Kunzite%20Face%20Cleanser%20(100gm)%20for%20all%20skin%20types.%20pH:%20Skin-friendly.%20Free%20from:%20Parabens,%20sulfates,%20oils,%20alcohol.%20Manufacturer:%20Om%20Sai%20Pharma%20Pack%20(WHO-GMP%20certified).%20Origin:%20Haridwar,%20India.%20Key%20Ingredients:%20Gentle%20surfactants%20(Decyl%20Glucoside,%20Sodium%20Lauroyl%20Sarcosinate,%20Cocamidopropyl%20Betaine),%20Niacinamide,%20Salicylic%20Acid,%20Ethyl%20Ascorbic%20Acid,%20Vitamin%20E,%20Hyaluronic%20Acid.%20Preservative:%20Phenoxyethanol.%20Benefits:%20Gentle%20cleansing,%20acne%20care,%20glow,%20hydration.%20Please%20share%20purchase%20details."
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" inline-block bg-[#d39c25] text-black px-10 py-4  rounded-full font-bold text-2xl shadow-lg hover:bg-[#e8bb08] transition-colors duration-300 mt-36 -mb-10"
                   >
                     Order now 
-                  </a>
+                  </a> */}
+                  <a
+  href={`https://wa.me/917895463211?text=I%20want%20to%20order%20*Kunzite%20Face%20Cleanser%20(100gm)*.%0A%0A%E2%80%A2%20Suitable%20for%20all%20skin%20types%0A%E2%80%A2%20pH%3A%20Skin-friendly%0A%E2%80%A2%20Free%20from%3A%20Parabens%2C%20Sulfates%2C%20Oils%2C%20and%20Alcohol%0A%E2%80%A2%20Manufacturer%3A%20Om%20Sai%20Pharma%20Pack%20(WHO-GMP%20Certified)%0A%E2%80%A2%20Origin%3A%20Haridwar%2C%20India%0A%0A*Key%20Ingredients%3A*%0A%E2%80%A2%20Decyl%20Glucoside%0A%E2%80%A2%20Sodium%20Lauroyl%20Sarcosinate%0A%E2%80%A2%20Cocamidopropyl%20Betaine%0A%E2%80%A2%20Niacinamide%0A%E2%80%A2%20Salicylic%20Acid%0A%E2%80%A2%20Ethyl%20Ascorbic%20Acid%20(Vitamin%20C)%0A%E2%80%A2%20Vitamin%20E%0A%E2%80%A2%20Hyaluronic%20Acid%0A%0A*Preservative%3A*%0A%E2%80%A2%20Phenoxyethanol%0A%0A*Benefits%3A*%0A%E2%80%A2%20Gentle%20cleansing%0A%E2%80%A2%20Acne%20care%0A%E2%80%A2%20Natural%20glow%20enhancement%0A%E2%80%A2%20Skin%20hydration%0A%0APlease%20share%20the%20purchase%20details%20and%20the%20current%20price%20of%20this%20product.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-[#d39c25] text-black px-10 py-4 rounded-full font-bold text-2xl shadow-lg hover:bg-[#e8bb08] transition-colors duration-300 mt-36 -mb-10"
+>
+  Order Now
+</a>
                 </div>
               </section>
         {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
