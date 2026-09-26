@@ -133,17 +133,17 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div className="relative">
+            {/* <div className="relative">
               <img
                 src={ceoMessage.img}
                 alt={ceoMessage.name}
                 className="w-full max-w-md rounded-3xl object-cover border border-white/10"
               />
-              <div className="absolute -bottom-5 left-5 bg-[#f59e0b] text-black px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+              <div className="absolute -bottom-5 left-5 bg-[#f59e0b] text-black px-4 py-2 rounded-full text- font-semibold uppercase tracking-wider">
                 Message from CEO
               </div>
-            </div>
-            <div>
+            </div> */}
+            <div className="absolute">
               <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Founder's Note</p>
               <h2 className="text-4xl md:text-5xl font-black text-black mb-5">A Message from  CEO</h2>
               <p className="text-black text-lg leading-relaxed mb-6">
@@ -157,7 +157,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-[#0d0d0d]">
+      <section className="py-24 bg-[#0d0d0d] mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Our Values</p>
